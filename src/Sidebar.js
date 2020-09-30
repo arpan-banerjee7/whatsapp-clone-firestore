@@ -99,15 +99,6 @@ function Sidebar() {
             </IconButton>
             <div className="sidebar__header">
               <Avatar src={photoURL} />{" "}
-              <p className="sidebar__greeting mobile__tag">
-                {" "}
-                <a
-                  href="https://alii13.github.io/portfolio/"
-                  style={{ color: "white" }}
-                >
-                  | MADE BY <span style={{ color: "white" }}>ALI</span> |
-                </a>
-              </p>
               <div className="sidebar__headerRight">
                 <IconButton>
                   <DonutLargeIcon />
