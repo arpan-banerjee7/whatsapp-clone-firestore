@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # Live demo @ https://whatsapp-clone-aec86.web.app
+![](app_image.JPG)
+![](app_image1.JPG)
 ## Follow these simple steps to have your own whatsapp clone
 
 #### 1: Clone this repo using this command 
@@ -28,6 +30,8 @@ Replace the line `"default": "your_project__name"` & save.
 
 ## Set Up Hosting in Firebase
 ####  Hit command : `firebase login `
+After logging in you will see this pop up-
+![](firebase_login_success.JPG)
 
 #### 1: Hit command `firebase init`
 
