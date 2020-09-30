@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# Live demo @ https://whatsapp-clone-aec86.web.app
 ## Follow these simple steps to have your own whatsapp clone
 
 #### 1: Clone this repo using this command 
@@ -27,6 +27,7 @@ Replace the line `"default": "your_project__name"` & save.
 
 
 ## Set Up Hosting in Firebase
+####  Hit command : `firebase login `
 
 #### 1: Hit command `firebase init`
 
@@ -34,7 +35,14 @@ Replace the line `"default": "your_project__name"` & save.
 
 #### 3: Goto the 4th option says - "Configure and Deploy firebase Hosting sites", Use Arrow key to go down & Hit spacebar to select the option and then hit Enter key
 
-#### 4: Enter `build` for directory && select `Yes` for all other options.
+#### 4: Enter `build` for directory && select `Yes` for all other options. If you see the prompt given below then hit command `firebase deploy <your project name>`
+` Error: No project active, but project aliases are available.
+
+Run firebase use <alias> with one of these options:
+
+  default (whatsapp-clone-aec86)
+  whatsappB (whatsapp-clone-aec86)
+  `
 
 #### 5: After initialization Completed. Enter 
 `npm run build`
