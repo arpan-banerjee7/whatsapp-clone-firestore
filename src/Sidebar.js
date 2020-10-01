@@ -96,7 +96,7 @@ function Sidebar() {
               aria-label="open drawer"
               edge="start"
               className="sidebar__burger"
-              onClick={handleDrawerToggle}
+              //onClick={handleDrawerToggle}
             >
               <MenuIcon />
             </IconButton>
