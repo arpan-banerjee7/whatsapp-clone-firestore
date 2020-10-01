@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Avatar, Collapse, IconButton } from "@material-ui/core";
+import { Avatar, IconButton } from "@material-ui/core";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import ChatIcon from "@material-ui/icons/Chat";
 // import MoreVertIcon from "@material-ui/icons/MoreVert";
@@ -13,6 +13,7 @@ import { actionTypes } from "./reducer";
 import UseWindowDimensions from "./UseWindowDimensions";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Loader from "./Loader";
+import Tooltip from "./Tooltip";
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
@@ -63,7 +64,9 @@ function Sidebar() {
 
   useEffect(() => {
     setToggler(!toggler);
+    console.log(toggler);
   }, [togglerState]);
+
   const handleDrawerToggle = () => {
     setToggler(toggler);
 
@@ -76,7 +79,7 @@ function Sidebar() {
     localStorage.getItem("photoURL") !== ""
       ? localStorage.getItem("photoURL")
       : null;
-  const displayName = localStorage.getItem("displayName");
+  //const displayName = localStorage.getItem("displayName");
   //  console.log(toggler,togglerState);
 
   return (
@@ -107,9 +110,11 @@ function Sidebar() {
                   <ChatIcon />
                 </IconButton>
                 <IconButton>
-                  <div onClick={exitApp}>
-                    <ExitToAppIcon />
-                  </div>
+                  <Tooltip text="LogOut">
+                    <div onClick={exitApp}>
+                      <ExitToAppIcon />
+                    </div>
+                  </Tooltip>
                 </IconButton>
               </div>
             </div>
@@ -153,9 +158,11 @@ function Sidebar() {
                 <ChatIcon />
               </IconButton>
               <IconButton>
-                <div onClick={exitApp}>
-                  <ExitToAppIcon />
-                </div>
+                <Tooltip text="LogOut">
+                  <div onClick={exitApp}>
+                    <ExitToAppIcon />
+                  </div>
+                </Tooltip>
               </IconButton>
             </div>
           </div>
@@ -173,7 +180,7 @@ function Sidebar() {
           {sidebarBool ? (
             <div className="sidebar__chats">
               <SidebarChat addNewChatVal="true" />
-              {rooms.length == 0 ? (
+              {rooms.length === 0 ? (
                 <Loader />
               ) : (
                 rooms.map((room) => (

@@ -9,7 +9,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import db from "./firebase";
 import firebase from "firebase";
 import "./Chat.css";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { actionTypes } from "./reducer";
 import UseWindowDimensions from "./UseWindowDimensions";
@@ -328,14 +328,14 @@ function Chat() {
                     //     <p className="chat__body__daystamp__title">{Object.keys(item)}</p>
                     //  </div>
                     item[Object.keys(item)].map((e, i) =>
-                      i == 0 ? (
+                      i === 0 ? (
                         <>
                           {parseInt(String(Object.keys(item)).slice(0, 2)) ? (
                             <div className="chat__body__daystamp">
                               <p className="chat__body__daystamp__title">
                                 {parseInt(
                                   String(Object.keys(item)).slice(0, 2)
-                                ) == parseInt(String(new Date().getDate()))
+                                ) === parseInt(String(new Date().getDate()))
                                   ? "TODAY"
                                   : Object.keys(item)}
                               </p>
@@ -351,7 +351,7 @@ function Chat() {
                             </span>
                             <Linkify>{e.messageData}</Linkify>
                             <span className="chat__timestamp">
-                              <div className="hidden">
+                              <span className="hidden">
                                 {
                                   (extramin =
                                     parseInt(
@@ -444,7 +444,7 @@ function Chat() {
                                         hour +
                                         parseInt(clientGMT))
                                 }
-                              </div>
+                              </span>
                               {hourly ? hourly % 12 : "00"}
                               {" : "}
                               {minutes !== 0
@@ -467,7 +467,7 @@ function Chat() {
                           </span>
                           <Linkify>{e.messageData}</Linkify>
                           <span className="chat__timestamp">
-                            <div className="hidden">
+                            <span className="hidden">
                               {
                                 (extramin =
                                   parseInt(
@@ -560,7 +560,7 @@ function Chat() {
                                       hour +
                                       parseInt(clientGMT))
                               }
-                            </div>
+                            </span>
                             {hourly ? hourly % 12 : "00"}
                             {" : "}
                             {minutes !== 0
@@ -617,7 +617,7 @@ function Chat() {
                 onClick={checkEmojiClose}
                 disabled={
                   roomName === "Admin: Ali"
-                    ? (displayName == "Shekh Aliul WqnNsFNEPr" ? true : false)
+                    ? (displayName === "Shekh Aliul WqnNsFNEPr" ? true : false)
                       ? false
                       : true
                     : false
@@ -642,7 +642,7 @@ function Chat() {
                 type="text"
                 placeholder="Type a message"
                 onChange={(e) => setInput(e.target.value)}
-                disabled={roomName == "Admin: Ali" ? true : false}
+                disabled={roomName === "Admin: Ali" ? true : false}
               />
               <button type="submit" onClick={sendMessage}>
                 Send A message
@@ -687,15 +687,15 @@ function Chat() {
               ? datewise.map(
                   (item, i) =>
                     item[Object.keys(item)].map((e, i) =>
-                      i == 0 ? (
+                      i === 0 ? (
                         <>
                           {Object.keys(item) &&
-                          Object.keys(item) != undefined ? (
+                          Object.keys(item) !== undefined ? (
                             <div className="chat__body__daystamp">
                               <p className="chat__body__daystamp__title">
                                 {parseInt(
                                   String(Object.keys(item)).slice(0, 2)
-                                ) == parseInt(String(new Date().getDate()))
+                                ) === parseInt(String(new Date().getDate()))
                                   ? "TODAY"
                                   : Object.keys(item)}
                               </p>
@@ -720,7 +720,7 @@ function Chat() {
                               {e.messageData}
                             </Linkify>
                             <span className="chat__timestamp">
-                              <div className="hidden">
+                              <span className="hidden">
                                 {
                                   (extramin =
                                     parseInt(
@@ -813,7 +813,7 @@ function Chat() {
                                         hour +
                                         parseInt(clientGMT))
                                 }
-                              </div>
+                              </span>
                               {hourly ? hourly % 12 : "00"}
                               {" : "}
                               {minutes !== 0
@@ -836,7 +836,7 @@ function Chat() {
                           </span>
                           <Linkify>{e.messageData}</Linkify>
                           <span className="chat__timestamp">
-                            <div className="hidden">
+                            <span className="hidden">
                               {
                                 (extramin =
                                   parseInt(
@@ -929,7 +929,7 @@ function Chat() {
                                       hour +
                                       parseInt(clientGMT))
                               }
-                            </div>
+                            </span>
                             {hourly ? hourly % 12 : "00"}
                             {" : "}
                             {minutes !== 0
@@ -964,14 +964,13 @@ function Chat() {
           </div>
 
           <div className="chat__footer">
-            <IconButton>
+            <div className="font-icon-wrapper" onClick={() => setEmoji(!emoji)}>
               {/* <InsertEmoticonIcon /> */}
-              <InsertEmoticonIcon
-                className="yellow"
-                onClick={() => setEmoji(!emoji)}
-              />
+
+              <InsertEmoticonIcon className="yellow pointer" />
+
               {emoji ? <Picker onSelect={addEmoji} /> : null}
-            </IconButton>
+            </div>
             <form>
               <input
                 value={input}
@@ -981,7 +980,7 @@ function Chat() {
                 onClick={checkEmojiClose}
                 disabled={
                   roomName === "Admin: Ali"
-                    ? (displayName == "Shekh Aliul WqnNsFNEPr" ? true : false)
+                    ? (displayName === "Shekh Aliul WqnNsFNEPr" ? true : false)
                       ? false
                       : true
                     : false
