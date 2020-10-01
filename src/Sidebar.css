@@ -86,6 +86,8 @@
   }
   .siderbar__wrapper button.MuiButtonBase-root.MuiIconButton-root {
     color: white;
+    margin-left: 2px;
+    font-size: 4px;
   }
   button.MuiButtonBase-root.MuiIconButton-root.sidebar__burger.MuiIconButton-colorInherit.MuiIconButton-edgeStart {
     margin-left: 0;
