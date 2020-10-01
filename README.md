@@ -54,4 +54,6 @@ Run firebase use <alias> with one of these options:
 #### 6: Now the last command
 Enter `firebase deploy`
 
+#### PS : After any new changes in the code : Run the following commands in order- `npm run build` , `firebase deploy`
+
 #### Boom! You have succesfully hosted your firebase app. Click on the link and Enjoy!. Don't forget to rate the repository.
