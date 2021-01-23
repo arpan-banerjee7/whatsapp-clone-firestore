@@ -33,6 +33,8 @@ Replace the line `"default": "your_project__name"` & save.
 After logging in you will see this pop up-
 ![](firebase_login_success.JPG)
 
+####    If error -- 'firebase' is not recognized as an internal or external command, operable program or batch file 
+        then run **npm install -g firebase-tools**
 #### 1: Hit command `firebase init`
 
 #### 2: Enter Yes
@@ -40,13 +42,13 @@ After logging in you will see this pop up-
 #### 3: Goto the 4th option says - "Configure and Deploy firebase Hosting sites", Use Arrow key to go down & Hit spacebar to select the option and then hit Enter key
 
 #### 4: Enter `build` for directory && select `Yes` for all other options. If you see the prompt given below then hit command `firebase deploy <your project name>`
-` Error: No project active, but project aliases are available.
+  Error: No project active, but project aliases are available.
 
-Run firebase use <alias> with one of these options:
+  `Run firebase use <alias> with one of these options:` **firebase use whatsapp-clone-aec86**
 
-  default (whatsapp-clone-aec86)
-  whatsappB (whatsapp-clone-aec86)
-  `
+  `default (whatsapp-clone-aec86)`
+  `whatsappB (whatsapp-clone-aec86)`
+  
 
 #### 5: After initialization Completed. Enter 
 `npm run build`
