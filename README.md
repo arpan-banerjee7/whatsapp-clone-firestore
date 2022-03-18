@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-# Live demo @ https://whatsapp-clone-aec86.web.app
+
 ![](app_image.JPG)
 ![](app_image1.JPG)
 ## Follow these simple steps to have your own whatsapp clone
